@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/magnifier.png</file>
+        <file>icons/zoomIn.png</file>
+        <file>icons/zoomOut.png</file>
+        <file>icons/back.png</file>
+        <file>icons/forward.png</file>
+        <file>icons/closeActive.png</file>
+        <file>icons/closeDefault.png</file>
+        <file>icons/searchApplyActive.png</file>
+        <file>icons/searchApplyDefault.png</file>
+        <file>icons/fontBold.png</file>
+        <file>icons/fontItalic.png</file>
+        <file>icons/fontUnderline.png</file>
+        <file>icons/fontDecrease.png</file>
+        <file>icons/fontIncrease.png</file>
+    </qresource>
+</RCC>

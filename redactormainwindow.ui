@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>redactorMainWindow</class>
+ <widget class="QMainWindow" name="redactorMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Редактор текста</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frameTitle">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>621</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #687a91;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton_file">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Yu Gothic UI</family>
+       <pointsize>13</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: #687a91;
+	border: none;
+	color: white;
+	border-top-right-radius: 0px;
+}
+QPushButton:hover {
+	background-color: #d4dae2;
+	border: none;
+	color: #687a91;
+	border-top-right-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>ФАЙЛ</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_font">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>0</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Yu Gothic UI</family>
+       <pointsize>13</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: #687a91;
+	border: none;
+	color: white;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+QPushButton:hover {
+	background-color: #d4dae2;
+	border: none;
+	color: #687a91;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>ШРИФТ</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="dividingLine_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>10</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:  #d4dae2;
+background-color: #d4dae2;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_paragraph">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>0</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Yu Gothic UI</family>
+       <pointsize>13</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: #687a91;
+	border: none;
+	color: white;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+QPushButton:hover {
+	background-color: #d4dae2;
+	border: none;
+	color: #687a91;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>АБЗАЦ</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frameCentral">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>611</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #d4dae2</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frameSearch">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>10</y>
+       <width>120</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(104, 122, 145, 100);
+border-radius: 5px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_search">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>10</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+color: white;
+border-radius: 0px;
+border-bottom: 1px solid white;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelSearchWindowTitle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>12</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+color: white;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>Поиск текста</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameFontRedactor">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>120</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(104, 122, 145, 100);
+border-radius: 5px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="labelFontRedactorTitle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Yu Gothic UI</family>
+        <pointsize>12</pointsize>
+        <bold>false</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+color: white;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>Редактор шрифта</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frameBottom">
+    <property name="geometry">
+     <rect>
+      <x>59</x>
+      <y>460</y>
+      <width>261</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:  #687a91;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="labelCursorPosition">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Yu Gothic UI</family>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>Стр 1, стлб 1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelHint">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Yu Gothic UI</family>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
