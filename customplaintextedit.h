@@ -25,6 +25,7 @@ public slots:
     void _on_setFontBold(bool state);
     void _on_setFontItalic(bool state);
     void _on_setFontUnderline(bool state);
+    void _on_setNewFont(QString newFontStr);
 
 private:
     void moveCursorToNextPosition();

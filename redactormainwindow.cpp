@@ -22,14 +22,6 @@ redactorMainWindow::redactorMainWindow(QWidget *parent)
     ui->frameFontRedactor->hide();
 
     loadDataToComboBoxFonts();
-    createConnectWithUiWidgets();
-
-    // QFile file1("C:/Users/User/Desktop/doc.txt"); // создаем объект класса QFile
-    // QByteArray data; // Создаем объект класса QByteArray, куда мы будем считывать данные
-    // if (!file1.open(QIODevice::ReadOnly)) // Проверяем, возможно ли открыть наш файл для чтения
-    //     return; // если это сделать невозможно, то завершаем функцию
-    // data = file1.readAll(); //считываем все данные с файла в объект data
-    // plainTextEdit->appendPlainText(QString(data));
 }
 
 redactorMainWindow::~redactorMainWindow()
@@ -73,6 +65,7 @@ void redactorMainWindow::createConnectWithPlainTextEdit()
     connect(buttonBold, SIGNAL(setFontBold(bool)), plainTextEdit, SLOT(_on_setFontBold(bool)));
     connect(buttonItalic, SIGNAL(setFontItalic(bool)), plainTextEdit, SLOT(_on_setFontItalic(bool)));
     connect(buttonUnderline, SIGNAL(setFontUnderline(bool)), plainTextEdit, SLOT(_on_setFontUnderline(bool)));
+    connect(ui->comboBox_fonts, SIGNAL(currentTextChanged(QString)), plainTextEdit, SLOT(_on_setNewFont(QString)));
 }
 
 void redactorMainWindow::createConnectWithButtons()
@@ -90,11 +83,6 @@ void redactorMainWindow::createConnectWithButtons()
     connect(buttonBold, SIGNAL(showHint(QString)), this, SLOT(_on_showHint(QString)));
     connect(buttonItalic, SIGNAL(showHint(QString)), this, SLOT(_on_showHint(QString)));
     connect(buttonUnderline, SIGNAL(showHint(QString)), this, SLOT(_on_showHint(QString)));
-}
-
-void redactorMainWindow::createConnectWithUiWidgets()
-{
-    connect(ui->comboBox_fonts, SIGNAL(currentTextChanged(QString)), this, SLOT(_on_comboBoxTextChanged(QString)));
 }
 
 void redactorMainWindow::loadDataToComboBoxFonts()
@@ -201,21 +189,6 @@ void redactorMainWindow::_on_animateFrameFont()
         connect(animation, &QPropertyAnimation::finished, ui->frameFontRedactor, &QFrame::hide);
         animation->start(QAbstractAnimation::DeleteWhenStopped);
     }
-}
-
-void redactorMainWindow::_on_comboBoxTextChanged(QString newFontStr)
-{
-    QFont newFont(newFontStr);
-    newFont.setBold(plainTextEdit->font().bold());
-    newFont.setItalic(plainTextEdit->font().italic());
-    newFont.setUnderline(plainTextEdit->font().underline());
-    newFont.setPointSize(plainTextEdit->font().pointSize());
-
-    QTextCursor cursor = plainTextEdit->textCursor();
-    QTextCharFormat format;
-    format.setFontFamily(newFontStr);
-    cursor.setCharFormat(format);
-    plainTextEdit->setTextCursor(cursor);
 }
 
 qreal redactorMainWindow::getYBottomPos(QWidget *w)
