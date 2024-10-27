@@ -113,7 +113,6 @@ void customPlainTextEdit::_on_setFontUnderline(bool state)
 
 void customPlainTextEdit::_on_setNewFont(QString newFontStr)
 {
-
     QTextCursor cursor = this->textCursor();
     QTextCharFormat charFormat = cursor.charFormat();
     charFormat.setFontFamily(newFontStr);

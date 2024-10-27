@@ -22,13 +22,6 @@ redactorMainWindow::redactorMainWindow(QWidget *parent)
     ui->frameFontRedactor->hide();
 
     loadDataToComboBoxFonts();
-
-    // QFile file1("C:/Users/User/Desktop/doc.txt"); // создаем объект класса QFile
-    // QByteArray data; // Создаем объект класса QByteArray, куда мы будем считывать данные
-    // if (!file1.open(QIODevice::ReadOnly)) // Проверяем, возможно ли открыть наш файл для чтения
-    //     return; // если это сделать невозможно, то завершаем функцию
-    // data = file1.readAll(); //считываем все данные с файла в объект data
-    // plainTextEdit->appendPlainText(QString(data));
 }
 
 redactorMainWindow::~redactorMainWindow()
