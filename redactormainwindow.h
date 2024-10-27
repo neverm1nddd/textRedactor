@@ -45,6 +45,7 @@ public slots:
     void _on_hideSearchWindow();
     void _on_pushButton_searchApply_clicked();
     void _on_animateFrameFont();
+    void _on_comboBoxTextChanged(QString newFontStr);
 
 private:
     qreal getYBottomPos(QWidget *w);
@@ -53,6 +54,8 @@ private:
     void loadButton();
     void createConnectWithPlainTextEdit();
     void createConnectWithButtons();
+    void createConnectWithUiWidgets();
+    void loadDataToComboBoxFonts();
 
     customButton *buttonSearch;
     customButton *buttonCloseSearchWindow;

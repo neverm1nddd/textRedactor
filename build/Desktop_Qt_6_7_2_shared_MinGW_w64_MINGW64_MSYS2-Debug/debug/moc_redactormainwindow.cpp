@@ -47,7 +47,9 @@ constexpr auto qt_meta_stringdata_CLASSredactorMainWindowENDCLASS = QtMocHelpers
     "_on_showSearchWindow",
     "_on_hideSearchWindow",
     "_on_pushButton_searchApply_clicked",
-    "_on_animateFrameFont"
+    "_on_animateFrameFont",
+    "_on_comboBoxTextChanged",
+    "newFontStr"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -60,7 +62,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSredactorMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -68,15 +70,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSredactorMainWindowENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   56,    2, 0x06,    1 /* Public */,
+       1,    1,   62,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    2,   59,    2, 0x0a,    3 /* Public */,
-       6,    1,   64,    2, 0x0a,    6 /* Public */,
-       8,    0,   67,    2, 0x0a,    8 /* Public */,
-       9,    0,   68,    2, 0x0a,    9 /* Public */,
-      10,    0,   69,    2, 0x0a,   10 /* Public */,
-      11,    0,   70,    2, 0x0a,   11 /* Public */,
+       3,    2,   65,    2, 0x0a,    3 /* Public */,
+       6,    1,   70,    2, 0x0a,    6 /* Public */,
+       8,    0,   73,    2, 0x0a,    8 /* Public */,
+       9,    0,   74,    2, 0x0a,    9 /* Public */,
+      10,    0,   75,    2, 0x0a,   10 /* Public */,
+      11,    0,   76,    2, 0x0a,   11 /* Public */,
+      12,    1,   77,    2, 0x0a,   12 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    1,
@@ -88,6 +91,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSredactorMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   13,
 
        0        // eod
 };
@@ -118,7 +122,10 @@ Q_CONSTINIT const QMetaObject redactorMainWindow::staticMetaObject = { {
         // method '_on_pushButton_searchApply_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method '_on_animateFrameFont'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method '_on_comboBoxTextChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>
     >,
     nullptr
 } };
@@ -136,6 +143,7 @@ void redactorMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 4: _t->_on_hideSearchWindow(); break;
         case 5: _t->_on_pushButton_searchApply_clicked(); break;
         case 6: _t->_on_animateFrameFont(); break;
+        case 7: _t->_on_comboBoxTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -169,13 +177,13 @@ int redactorMainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

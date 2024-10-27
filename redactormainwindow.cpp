@@ -21,6 +21,9 @@ redactorMainWindow::redactorMainWindow(QWidget *parent)
     ui->frameSearch->setVisible(false);
     ui->frameFontRedactor->hide();
 
+    loadDataToComboBoxFonts();
+    createConnectWithUiWidgets();
+
     // QFile file1("C:/Users/User/Desktop/doc.txt"); // создаем объект класса QFile
     // QByteArray data; // Создаем объект класса QByteArray, куда мы будем считывать данные
     // if (!file1.open(QIODevice::ReadOnly)) // Проверяем, возможно ли открыть наш файл для чтения
@@ -89,6 +92,19 @@ void redactorMainWindow::createConnectWithButtons()
     connect(buttonUnderline, SIGNAL(showHint(QString)), this, SLOT(_on_showHint(QString)));
 }
 
+void redactorMainWindow::createConnectWithUiWidgets()
+{
+    connect(ui->comboBox_fonts, SIGNAL(currentTextChanged(QString)), this, SLOT(_on_comboBoxTextChanged(QString)));
+}
+
+void redactorMainWindow::loadDataToComboBoxFonts()
+{
+    QFontDatabase fontDatabase;
+    QStringList fontFamilies = fontDatabase.families();
+    ui->comboBox_fonts->addItems(fontFamilies);
+    ui->comboBox_fonts->setCurrentText("Arial");
+}
+
 void redactorMainWindow::resizeEvent(QResizeEvent *event)
 {
     QSize windowSize = event->size();
@@ -134,9 +150,11 @@ void redactorMainWindow::resizeEvent(QResizeEvent *event)
     ui->frameFontRedactor->setFixedSize(ui->frameCentral->width()/FRAME_FONT_REDACTOR_WIDTH, ui->frameCentral->height()/FRAME_FONT_REDACTOR_HEIGHT);
     ui->frameFontRedactor->move(FRAME_FONT_REDACTOR_X_POS, ui->frameCentral->height()/2 - ui->frameFontRedactor->height()/2);
     ui->labelFontRedactorTitle->setGeometry(0, 0, ui->frameFontRedactor->width(), ui->frameFontRedactor->height()/LABEL_FRAME_FRONT_TITLE_HEIGHT);
-    buttonBold->move(ui->frameFontRedactor->width()/4 - buttonBold->width()/2, 1.3*ui->frameFontRedactor->height()/LABEL_FRAME_FRONT_TITLE_HEIGHT);
+    buttonBold->move(ui->frameFontRedactor->width()/4 - buttonBold->width()/2, 2*ui->frameFontRedactor->height()/LABEL_FRAME_FRONT_TITLE_HEIGHT - buttonBold->height()/2);
     buttonItalic->move(2*ui->frameFontRedactor->width()/4 - buttonBold->width()/2, buttonBold->y());
     buttonUnderline->move(3*ui->frameFontRedactor->width()/4 - buttonBold->width()/2, buttonBold->y());
+    ui->labelFontList->setGeometry(LABEL_FONT_LIST_HORIZONTAL_GAP, 3*ui->frameFontRedactor->height()/LABEL_FRAME_FRONT_TITLE_HEIGHT - ui->labelFontList->height()/2, ui->frameFontRedactor->width()/4, LABEL_FONT_LIST_HEIGHT);
+    ui->comboBox_fonts->setGeometry(getXRightPos(ui->labelFontList) + LABEL_FONT_LIST_HORIZONTAL_GAP, ui->labelFontList->y(), ui->frameFontRedactor->width() - 3*LABEL_FONT_LIST_HORIZONTAL_GAP - ui->labelFontList->width(), ui->labelFontList->height());
 }
 
 void redactorMainWindow::_on_cursorPositionChanged(int line, int column)
@@ -183,6 +201,16 @@ void redactorMainWindow::_on_animateFrameFont()
         connect(animation, &QPropertyAnimation::finished, ui->frameFontRedactor, &QFrame::hide);
         animation->start(QAbstractAnimation::DeleteWhenStopped);
     }
+}
+
+void redactorMainWindow::_on_comboBoxTextChanged(QString newFontStr)
+{
+    QFont newFont(newFontStr);
+    newFont.setBold(plainTextEdit->font().bold());
+    newFont.setItalic(plainTextEdit->font().italic());
+    newFont.setUnderline(plainTextEdit->font().underline());
+    newFont.setPointSize(plainTextEdit->font().pointSize());
+    plainTextEdit->setFont(newFont);
 }
 
 qreal redactorMainWindow::getYBottomPos(QWidget *w)

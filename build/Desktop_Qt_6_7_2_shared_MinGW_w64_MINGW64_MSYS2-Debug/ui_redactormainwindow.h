@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -35,6 +36,8 @@ public:
     QLabel *labelSearchWindowTitle;
     QFrame *frameFontRedactor;
     QLabel *labelFontRedactorTitle;
+    QComboBox *comboBox_fonts;
+    QLabel *labelFontList;
     QFrame *frameBottom;
     QLabel *labelCursorPosition;
     QLabel *labelHint;
@@ -159,24 +162,71 @@ public:
         labelSearchWindowTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
         frameFontRedactor = new QFrame(frameCentral);
         frameFontRedactor->setObjectName("frameFontRedactor");
-        frameFontRedactor->setGeometry(QRect(0, 30, 120, 80));
+        frameFontRedactor->setGeometry(QRect(0, 30, 201, 131));
         frameFontRedactor->setStyleSheet(QString::fromUtf8("background-color: rgba(104, 122, 145, 100);\n"
 "border-radius: 5px;"));
         frameFontRedactor->setFrameShape(QFrame::Shape::StyledPanel);
         frameFontRedactor->setFrameShadow(QFrame::Shadow::Raised);
         labelFontRedactorTitle = new QLabel(frameFontRedactor);
         labelFontRedactorTitle->setObjectName("labelFontRedactorTitle");
-        labelFontRedactorTitle->setGeometry(QRect(10, 10, 101, 16));
+        labelFontRedactorTitle->setGeometry(QRect(10, 10, 101, 31));
         QFont font3;
         font3.setFamilies({QString::fromUtf8("Yu Gothic UI")});
         font3.setPointSize(12);
-        font3.setBold(false);
-        font3.setUnderline(true);
+        font3.setBold(true);
+        font3.setUnderline(false);
         labelFontRedactorTitle->setFont(font3);
-        labelFontRedactorTitle->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+        labelFontRedactorTitle->setStyleSheet(QString::fromUtf8("/*background-color: #687a91;*/\n"
+"background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #687a91, stop: 1 transparent);\n"
 "color: white;\n"
-"border-radius: 0px;"));
+"border-radius: 0px;\n"
+"border-top-right-radius: 5px;\n"
+"border-top-left-radius: 5px;"));
         labelFontRedactorTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        comboBox_fonts = new QComboBox(frameFontRedactor);
+        comboBox_fonts->setObjectName("comboBox_fonts");
+        comboBox_fonts->setGeometry(QRect(10, 50, 131, 24));
+        QFont font4;
+        font4.setBold(false);
+        comboBox_fonts->setFont(font4);
+        comboBox_fonts->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"                border: 1px solid white;\n"
+"                border-radius: 4px;\n"
+"                padding: 5px;\n"
+"                background-color: transparent;\n"
+"                color: white;\n"
+"                font-size: 15px;\n"
+"            }\n"
+"            QComboBox::drop-down {\n"
+"                border: 0px;\n"
+"                width: 20px;\n"
+"                height: 20px;\n"
+"            }\n"
+"            QComboBox::down-arrow {\n"
+"                image: url(:/icons/downArrow.png);\n"
+"                width: 10px;\n"
+"                height: 10px;\n"
+"            }\n"
+"            QComboBox QAbstractItemView {\n"
+"                border: 1px solid #ccc;\n"
+"                border-radius: 4px;\n"
+"                background-color: #fff;\n"
+"                color: #333;\n"
+"                font-size: 15px;\n"
+"                selection-background-color: #e0e0e0;\n"
+"            }"));
+        labelFontList = new QLabel(frameFontRedactor);
+        labelFontList->setObjectName("labelFontList");
+        labelFontList->setGeometry(QRect(120, 60, 71, 16));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Yu Gothic UI")});
+        font5.setPointSize(11);
+        font5.setBold(true);
+        labelFontList->setFont(font5);
+        labelFontList->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color: white;\n"
+""));
+        labelFontList->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
         frameBottom = new QFrame(centralwidget);
         frameBottom->setObjectName("frameBottom");
         frameBottom->setGeometry(QRect(59, 460, 261, 80));
@@ -186,16 +236,16 @@ public:
         labelCursorPosition = new QLabel(frameBottom);
         labelCursorPosition->setObjectName("labelCursorPosition");
         labelCursorPosition->setGeometry(QRect(10, 40, 81, 16));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("Yu Gothic UI")});
-        font4.setPointSize(10);
-        font4.setBold(true);
-        labelCursorPosition->setFont(font4);
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Yu Gothic UI")});
+        font6.setPointSize(10);
+        font6.setBold(true);
+        labelCursorPosition->setFont(font6);
         labelCursorPosition->setStyleSheet(QString::fromUtf8("color: white;"));
         labelHint = new QLabel(frameBottom);
         labelHint->setObjectName("labelHint");
         labelHint->setGeometry(QRect(150, 40, 81, 16));
-        labelHint->setFont(font4);
+        labelHint->setFont(font6);
         labelHint->setStyleSheet(QString::fromUtf8("color: white;"));
         labelHint->setAlignment(Qt::AlignmentFlag::AlignCenter);
         redactorMainWindow->setCentralWidget(centralwidget);
@@ -213,6 +263,7 @@ public:
         pushButton_paragraph->setText(QCoreApplication::translate("redactorMainWindow", "\320\220\320\221\320\227\320\220\320\246", nullptr));
         labelSearchWindowTitle->setText(QCoreApplication::translate("redactorMainWindow", "\320\237\320\276\320\270\321\201\320\272 \321\202\320\265\320\272\321\201\321\202\320\260", nullptr));
         labelFontRedactorTitle->setText(QCoreApplication::translate("redactorMainWindow", "\320\240\320\265\320\264\320\260\320\272\321\202\320\276\321\200 \321\210\321\200\320\270\321\204\321\202\320\260", nullptr));
+        labelFontList->setText(QCoreApplication::translate("redactorMainWindow", "\320\250\321\200\320\270\321\204\321\202:", nullptr));
         labelCursorPosition->setText(QCoreApplication::translate("redactorMainWindow", "\320\241\321\202\321\200 1, \321\201\321\202\320\273\320\261 1", nullptr));
         labelHint->setText(QString());
     } // retranslateUi

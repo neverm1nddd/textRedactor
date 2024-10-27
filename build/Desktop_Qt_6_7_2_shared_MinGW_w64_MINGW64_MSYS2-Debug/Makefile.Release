@@ -126,6 +126,7 @@ release/qrc_resources.cpp: ../../resources.qrc \
 		../../icons/back.png \
 		../../icons/fontUnderline.png \
 		../../icons/closeDefault.png \
+		../../icons/downArrow.png \
 		../../icons/forward.png \
 		../../icons/fontIncrease.png \
 		../../icons/searchApplyActive.png \
@@ -335,6 +336,7 @@ release/moc_custombutton.cpp: ../../custombutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QPushButton \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qpushbutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qabstractbutton.h \
+		../../../../../../msys64/mingw64/include/qt6/QtGui/QMouseEvent \
 		../../_enums.h \
 		release/moc_predefs.h \
 		../../../../msys64/mingw64/share/qt6/bin/moc.exe
@@ -762,6 +764,7 @@ release/moc_redactormainwindow.cpp: ../../redactormainwindow.h \
 		../../_size.h \
 		../../custombutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QWidget \
+		../../../../../../msys64/mingw64/include/qt6/QtGui/QMouseEvent \
 		../../customplaintextedit.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QPlainTextEdit \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qplaintextedit.h \
@@ -1000,6 +1003,7 @@ release/custombutton.o: ../../custombutton.cpp ../../custombutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QPushButton \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qpushbutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qabstractbutton.h \
+		../../../../../../msys64/mingw64/include/qt6/QtGui/QMouseEvent \
 		../../_enums.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\custombutton.o ..\..\custombutton.cpp
 
@@ -1423,6 +1427,7 @@ release/main.o: ../../main.cpp ../../redactormainwindow.h \
 		../../_size.h \
 		../../custombutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QWidget \
+		../../../../../../msys64/mingw64/include/qt6/QtGui/QMouseEvent \
 		../../customplaintextedit.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QPlainTextEdit \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qplaintextedit.h \
@@ -1659,6 +1664,7 @@ release/redactormainwindow.o: ../../redactormainwindow.cpp ../../redactormainwin
 		../../_size.h \
 		../../custombutton.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QWidget \
+		../../../../../../msys64/mingw64/include/qt6/QtGui/QMouseEvent \
 		../../customplaintextedit.h \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/QPlainTextEdit \
 		../../../../../../msys64/mingw64/include/qt6/QtWidgets/qplaintextedit.h \

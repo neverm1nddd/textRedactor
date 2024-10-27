@@ -14,8 +14,10 @@ customPlainTextEdit::customPlainTextEdit(QWidget *parent)
     this->setGraphicsEffect(effect);
 
     this->setStyleSheet("QPlainTextEdit { padding-left:10; padding-top:10; padding-bottom:10; padding-right:10; background-color: white; border-radius: 5px;}");
-}
 
+    QFont initialFont("Arial", 12); // Установите начальный шрифт и размер
+    this->setFont(initialFont);
+}
 
 void customPlainTextEdit::wheelEvent(QWheelEvent *event)
 {

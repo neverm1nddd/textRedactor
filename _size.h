@@ -33,9 +33,11 @@ const qreal LINE_EDIT_SEARCH_LEFT_GAP               = 15;
 const qreal LINE_EDIT_SEARCH_RIGHT_GAP              = 35;
 
 const qreal FRAME_FONT_REDACTOR_HEIGHT              = 4;
-const qreal FRAME_FONT_REDACTOR_WIDTH               = 8;
+const qreal FRAME_FONT_REDACTOR_WIDTH               = 6;
 const qreal FRAME_FONT_REDACTOR_X_POS               = 5;
-const qreal LABEL_FRAME_FRONT_TITLE_HEIGHT          = 5;
+const qreal LABEL_FRAME_FRONT_TITLE_HEIGHT          = 6;
+const qreal LABEL_FONT_LIST_HORIZONTAL_GAP          = 10;
+const qreal LABEL_FONT_LIST_HEIGHT                  = 24;
 
 }
 

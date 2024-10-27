@@ -346,6 +346,9 @@ void customButton::mousePressEvent(QMouseEvent *event)
             break;
         }
         default:
+        {
+            emit clicked();
             break;
+        }
     }
 }

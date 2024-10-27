@@ -14,5 +14,6 @@
         <file>icons/fontUnderline.png</file>
         <file>icons/fontDecrease.png</file>
         <file>icons/fontIncrease.png</file>
+        <file>icons/downArrow.png</file>
     </qresource>
 </RCC>
