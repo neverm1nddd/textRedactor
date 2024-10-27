@@ -210,7 +210,12 @@ void redactorMainWindow::_on_comboBoxTextChanged(QString newFontStr)
     newFont.setItalic(plainTextEdit->font().italic());
     newFont.setUnderline(plainTextEdit->font().underline());
     newFont.setPointSize(plainTextEdit->font().pointSize());
-    plainTextEdit->setFont(newFont);
+
+    QTextCursor cursor = plainTextEdit->textCursor();
+    QTextCharFormat format;
+    format.setFontFamily(newFontStr);
+    cursor.setCharFormat(format);
+    plainTextEdit->setTextCursor(cursor);
 }
 
 qreal redactorMainWindow::getYBottomPos(QWidget *w)
