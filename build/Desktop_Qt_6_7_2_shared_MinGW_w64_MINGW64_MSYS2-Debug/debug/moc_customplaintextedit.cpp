@@ -50,7 +50,9 @@ constexpr auto qt_meta_stringdata_CLASScustomPlainTextEditENDCLASS = QtMocHelper
     "_on_setFontBold",
     "state",
     "_on_setFontItalic",
-    "_on_setFontUnderline"
+    "_on_setFontUnderline",
+    "_on_setNewFont",
+    "newFontStr"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -63,7 +65,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScustomPlainTextEditENDCLASS[] = 
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,17 +73,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScustomPlainTextEditENDCLASS[] = 
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,   68,    2, 0x06,    1 /* Public */,
+       1,    2,   74,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       5,    0,   73,    2, 0x0a,    4 /* Public */,
-       6,    0,   74,    2, 0x0a,    5 /* Public */,
-       7,    0,   75,    2, 0x0a,    6 /* Public */,
-       8,    1,   76,    2, 0x0a,    7 /* Public */,
-      10,    0,   79,    2, 0x0a,    9 /* Public */,
-      11,    1,   80,    2, 0x0a,   10 /* Public */,
-      13,    1,   83,    2, 0x0a,   12 /* Public */,
-      14,    1,   86,    2, 0x0a,   14 /* Public */,
+       5,    0,   79,    2, 0x0a,    4 /* Public */,
+       6,    0,   80,    2, 0x0a,    5 /* Public */,
+       7,    0,   81,    2, 0x0a,    6 /* Public */,
+       8,    1,   82,    2, 0x0a,    7 /* Public */,
+      10,    0,   85,    2, 0x0a,    9 /* Public */,
+      11,    1,   86,    2, 0x0a,   10 /* Public */,
+      13,    1,   89,    2, 0x0a,   12 /* Public */,
+      14,    1,   92,    2, 0x0a,   14 /* Public */,
+      15,    1,   95,    2, 0x0a,   16 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    4,
@@ -95,6 +98,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScustomPlainTextEditENDCLASS[] = 
     QMetaType::Void, QMetaType::Bool,   12,
     QMetaType::Void, QMetaType::Bool,   12,
     QMetaType::Void, QMetaType::Bool,   12,
+    QMetaType::Void, QMetaType::QString,   16,
 
        0        // eod
 };
@@ -131,7 +135,10 @@ Q_CONSTINIT const QMetaObject customPlainTextEdit::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         // method '_on_setFontUnderline'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<bool, std::false_type>
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
+        // method '_on_setNewFont'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>
     >,
     nullptr
 } };
@@ -151,6 +158,7 @@ void customPlainTextEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 6: _t->_on_setFontBold((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 7: _t->_on_setFontItalic((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 8: _t->_on_setFontUnderline((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 9: _t->_on_setNewFont((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -184,13 +192,13 @@ int customPlainTextEdit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

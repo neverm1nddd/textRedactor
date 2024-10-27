@@ -15,7 +15,7 @@ customPlainTextEdit::customPlainTextEdit(QWidget *parent)
 
     this->setStyleSheet("QPlainTextEdit { padding-left:10; padding-top:10; padding-bottom:10; padding-right:10; background-color: white; border-radius: 5px;}");
 
-    QFont initialFont("Arial", 12); // Установите начальный шрифт и размер
+    QFont initialFont("Arial", 14);
     this->setFont(initialFont);
 }
 
@@ -86,23 +86,39 @@ void customPlainTextEdit::_on_clearSelections()
 
 void customPlainTextEdit::_on_setFontBold(bool state)
 {
-    QFont newFont = this->font();
-    newFont.setBold(state);
-    this->setFont(newFont);
+    QTextCursor cursor = this->textCursor();
+    QTextCharFormat charFormat = cursor.charFormat();
+    charFormat.setFontWeight(state ? QFont::Bold : QFont::Normal);
+    cursor.setCharFormat(charFormat);
+    this->setCurrentCharFormat(charFormat);
 }
 
 void customPlainTextEdit::_on_setFontItalic(bool state)
 {
-    QFont newFont = this->font();
-    newFont.setItalic(state);
-    this->setFont(newFont);
+    QTextCursor cursor = this->textCursor();
+    QTextCharFormat charFormat = cursor.charFormat();
+    charFormat.setFontItalic(state);
+    cursor.setCharFormat(charFormat);
+    this->setCurrentCharFormat(charFormat);
 }
 
 void customPlainTextEdit::_on_setFontUnderline(bool state)
 {
-    QFont newFont = this->font();
-    newFont.setUnderline(state);
-    this->setFont(newFont);
+    QTextCursor cursor = this->textCursor();
+    QTextCharFormat charFormat = cursor.charFormat();
+    charFormat.setFontUnderline(state);
+    cursor.setCharFormat(charFormat);
+    this->setCurrentCharFormat(charFormat);
+}
+
+void customPlainTextEdit::_on_setNewFont(QString newFontStr)
+{
+
+    QTextCursor cursor = this->textCursor();
+    QTextCharFormat charFormat = cursor.charFormat();
+    charFormat.setFontFamily(newFontStr);
+    cursor.setCharFormat(charFormat);
+    this->setCurrentCharFormat(charFormat);
 }
 
 void customPlainTextEdit::moveCursorToNextPosition() {
